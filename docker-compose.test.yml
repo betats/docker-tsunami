@@ -1,1 +1,14 @@
-docker-compose.yml
+version: '3.6'
+
+services:
+    sut:
+        build: .
+        entrypoint: java
+        command:
+            - -cp
+            - ${JARFILE:-tsunami-main-0.0.2-SNAPSHOT-cli.jar}:/tsunami/plugins/*
+            - -Dtsunami-config.location=/tsunami/tsunami-security-scanner/tsunami.yaml
+            - com.google.tsunami.main.cli.TsunamiCli
+            - --ip-v4-target=${IPV4ADDR:-127.0.0.1}
+            - --scan-results-local-output-format=JSON
+            - --scan-results-local-output-filename=/tsunami/result/tsunami-output.json
