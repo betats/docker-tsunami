@@ -3,8 +3,8 @@ version: '3.6'
 services:
     sut:
         build: .
-        entrypoint: java
         command:
+            - java
             - -cp
             - ${JARFILE:-tsunami-main-0.0.2-SNAPSHOT-cli.jar}:/tsunami/plugins/*
             - -Dtsunami-config.location=/tsunami/tsunami-security-scanner/tsunami.yaml
