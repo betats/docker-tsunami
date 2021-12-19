@@ -1,5 +1,7 @@
 #!/bin/sh
 DATEPREFIX=$(date "+%Y%m%d%H/")
+mkdir -p logs/$DATEPREFIX
+
 for i in $(cat list_ipv4.txt);
 do
   nmap -sL -n -4 $i | awk '/Nmap scan report/{print $NF}' | tr -d "()" | while read l ;

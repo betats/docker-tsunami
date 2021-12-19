@@ -5,3 +5,6 @@ services:
         build: .
         volumes:
             - ./logs:/tsunami/logs/
+            - ./list_ipv4.txt:/tsunami/list_ipv4.txt:ro
+            - ./list_ipv6.txt:/tsunami/list_ipv6.txt:ro
+            - ./tsunami.yml:/tsunami/tsunami.yml:ro
