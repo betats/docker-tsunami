@@ -4,8 +4,8 @@ https://github.com/google/tsunami-security-scanner
 
 ## how to use
 
-- edit .env file
-- mkdir result
+- edit list_ips.txt
+- mkdir logs
 - docker-compose up
 
 ## version
@@ -15,6 +15,9 @@ alpha
 ## some info
 
 - Why jdk8? It's workaround. cannot compile openjdk 16
+- list_ips.txt can add hostname?
+  - Yes, but not recommended.
+    - Only first query scan
 
 ## License
 
